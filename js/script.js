@@ -1,6 +1,7 @@
 let products = [];
 
-function renderProducts(filteredProducts) {
+// render products on the basis of filter applied
+const renderProducts = (filteredProducts) => {
   const productList = $("#productList");
   productList.empty();
 
@@ -33,18 +34,20 @@ function renderProducts(filteredProducts) {
                     `);
     });
   }
-}
+};
 
-function populateCategories() {
+// fetch the categories and display on the dropdown list
+const populateCategories = () => {
   const categories = [...new Set(products.map((p) => p.category))];
   categories.forEach((category) => {
     $("#categoryFilter").append(
       `<option value="${category}">${category}</option>`
     );
   });
-}
+};
 
-function applyFilters() {
+// check the applied filter and render products
+const applyFilters = () => {
   let filtered = [...products];
 
   const selectedCategory = $("#categoryFilter").val();
@@ -69,16 +72,18 @@ function applyFilters() {
   }
 
   renderProducts(filtered);
-}
+};
 
-function resetFilters() {
+// reset the filters
+const resetFilters = () => {
   $("#categoryFilter").val("");
   $("#minPrice").val("");
   $("#maxPrice").val("");
   $("#inStockFilter").prop("checked", false);
   applyFilters();
-}
+};
 
+// fetch all the products from json file and load it first
 $(document).ready(function () {
   $.getJSON("js/products.json", function (data) {
     products = data;
