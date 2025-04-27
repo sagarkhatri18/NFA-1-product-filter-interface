@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter Interface</title>
+
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 p-6">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6 text-center">
+        Product Filter Interface
+      </h1>
+
+      <div class="flex flex-col lg:flex-row gap-6">
+        <!-- Filter start from here -->
+        <div
+          class="bg-white p-4 rounded shadow-md w-full lg:w-1/4 rounded border-2 border-blue-100"
+        >
+          <h2 class="text-xl font-semibold mb-4">Filters</h2>
+          <!-- Filter end -->
+
+          <!-- Category Filter starts here -->
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-2">Category</label>
+            <select id="categoryFilter" class="w-full border rounded p-2">
+              <option value="">All</option>
+            </select>
+          </div>
+          <!-- Category Filter ends here -->
+
+          <!-- Price Filter starts here -->
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-2"
+              >Price Range</label
+            >
+            <div class="flex space-x-2">
+              <input
+                id="minPrice"
+                type="number"
+                placeholder="Min"
+                min="1"
+                class="w-1/2 border rounded p-2"
+              />
+              <input
+                id="maxPrice"
+                type="number"
+                placeholder="Max"
+                min="1"
+                class="w-1/2 border rounded p-2"
+              />
+            </div>
+          </div>
+          <!-- Price Filter ends here -->
+
+          <!-- In Stock Filter -->
+          <div class="mb-4">
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="inStockFilter" class="form-checkbox" />
+              <span class="ml-2 text-gray-700">Only In-Stock</span>
+            </label>
+          </div>
+
+          <!-- Reset Button -->
+          <button
+            id="resetFilters"
+            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full"
+          >
+            Reset Filters
+          </button>
+        </div>
+
+        <!-- Product List -->
+        <div class="w-full lg:w-3/4 space-y-2">
+          <div class="flex gap-2" id="resultCountDiv">
+            <span class="text-sm font-bold">Results</span>
+            <span
+              id="resultCount"
+              class="inline-flex text-sm font-semibold items-center justify-center bg-black text-white w-5 h-5 px-1 py-0.5 rounded"
+            ></span>
+          </div>
+          <div
+            id="productList"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          ></div>
+          <p
+            id="noProducts"
+            class="hidden text-center text-red-500 font-semibold mt-6"
+          >
+            No products match your filters.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Laptop",
+    "category": "Electronics",
+    "price": 1200,
+    "inStock": true
+  },
+  { "name": "T-Shirt", "category": "Clothing", "price": 25, "inStock": true },
+  {
+    "name": "Smartphone",
+    "category": "Electronics",
+    "price": 800,
+    "inStock": false
+  },
+  { "name": "Jeans", "category": "Clothing", "price": 60, "inStock": true },
+  {
+    "name": "Headphones",
+    "category": "Electronics",
+    "price": 150,
+    "inStock": true
+  },
+  { "name": "Jacket", "category": "Clothing", "price": 120, "inStock": false }
+]
